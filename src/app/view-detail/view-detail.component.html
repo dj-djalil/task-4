@@ -1,0 +1,36 @@
+
+
+<div class="container">
+
+  <!-- calling parent comp methode -->
+  <app-add-details (parentFunction)="parentFunction($event)"> </app-add-details>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Email</th>
+        <th scope="col">Company</th>
+        <th scope="col">Date of joining</th>
+        <th scope="col">Job Description</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="receivingDetails">
+        <th >1</th>
+        <td >{{receivingDetails.firstName}}</td>
+        <td >{{receivingDetails.lastName}}</td>
+        <td >{{receivingDetails.email}}</td>
+        <td >{{receivingDetails.companyName}}</td>
+        <td >{{receivingDetails.joiningDate | date :'fullDate'}}</td>
+        <td > {{receivingDetails.roleDescription | maxLength : 10}}</td>
+
+      </tr>
+
+
+    </tbody>
+  </table>
+</div>
